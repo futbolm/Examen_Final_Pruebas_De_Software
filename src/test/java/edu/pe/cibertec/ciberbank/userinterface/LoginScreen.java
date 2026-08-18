@@ -3,7 +3,7 @@ package edu.pe.cibertec.ciberbank.userinterface;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-/** Locators de la pantalla de login. Todos por resource-id. */
+
 public class LoginScreen {
 
     private static final String PAQUETE = "edu.pe.cibertec.ciberbank:id/";

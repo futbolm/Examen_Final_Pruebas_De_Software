@@ -1,23 +1,21 @@
 package edu.pe.cibertec.ciberbank.stepdefinitions;
 
-import edu.pe.cibertec.ciberbank.questions.TextoDe;
+import edu.pe.cibertec.ciberbank.questions.MensajeDeErrorVisible;
 import edu.pe.cibertec.ciberbank.tasks.EsperarLaPantallaDeLogin;
 import edu.pe.cibertec.ciberbank.tasks.IniciarSesion;
 import edu.pe.cibertec.ciberbank.userinterface.DashboardScreen;
-import edu.pe.cibertec.ciberbank.userinterface.LoginScreen;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
-import io.cucumber.java.es.Y;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.questions.Text;
 
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.Matchers.is;
 
 public class LoginStepDefinitions {
 
@@ -45,24 +43,18 @@ public class LoginStepDefinitions {
         );
     }
 
-    @Entonces("debería ver el saludo {string}")
-    public void deberia_ver_el_saludo(String saludo) {
-        theActorInTheSpotlight().should(
-                seeThat("el saludo del dashboard", TextoDe.el(DashboardScreen.SALUDO), is(saludo))
+    @Entonces("debería ver el saldo {string} en el dashboard")
+    public void deberia_ver_el_saldo_en_el_dashboard(String saldo) {
+        theActorInTheSpotlight().attemptsTo(
+                Ensure.that(Text.of(DashboardScreen.SALDO_PRINCIPAL)).isEqualTo(saldo)
         );
     }
 
-    @Y("el saldo mostrado debería ser {string}")
-    public void el_saldo_mostrado_deberia_ser(String saldo) {
-        theActorInTheSpotlight().should(
-                seeThat("el saldo de la cuenta principal", TextoDe.el(DashboardScreen.SALDO_PRINCIPAL), is(saldo))
-        );
-    }
 
     @Entonces("debería ver el mensaje de error {string}")
     public void deberia_ver_el_mensaje_de_error(String mensaje) {
-        theActorInTheSpotlight().should(
-                seeThat("el mensaje de error del login", TextoDe.el(LoginScreen.ERROR_LOGIN), is(mensaje))
+        theActorInTheSpotlight().attemptsTo(
+                Ensure.that(MensajeDeErrorVisible.enPantalla()).isEqualTo(mensaje)
         );
     }
 }
