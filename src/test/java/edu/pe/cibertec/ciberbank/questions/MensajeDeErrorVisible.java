@@ -1,6 +1,7 @@
 package edu.pe.cibertec.ciberbank.questions;
 
 import edu.pe.cibertec.ciberbank.userinterface.LoginScreen;
+import edu.pe.cibertec.ciberbank.userinterface.TransferenciaScreen;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.targets.Target;
@@ -11,7 +12,8 @@ public class MensajeDeErrorVisible implements Question<String> {
 
     private static final List<Target> POSIBLES_ERRORES = List.of(
             LoginScreen.ERROR_LOGIN,
-            LoginScreen.ERROR_USUARIO
+            LoginScreen.ERROR_USUARIO,
+            TransferenciaScreen.ERROR_TRANSFERENCIA
     );
 
     public static MensajeDeErrorVisible enPantalla() {
