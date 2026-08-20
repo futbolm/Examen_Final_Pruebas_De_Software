@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-/** Navega desde el dashboard hacia Movimientos usando el acceso directo (btn_movimientos). */
+/** Navega desde el dashboard hacia Movimientos usando el acceso directo btn_movimientos. */
 public class AbrirMovimientos implements Task {
 
     public static AbrirMovimientos desdeElDashboard() {

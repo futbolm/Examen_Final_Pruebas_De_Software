@@ -3,7 +3,7 @@ package edu.pe.cibertec.ciberbank.userinterface;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-/** Locators de la pantalla de Movimientos. Todos por resource-id. */
+
 public class MovimientosScreen {
 
     private static final String PAQUETE = "edu.pe.cibertec.ciberbank:id/";

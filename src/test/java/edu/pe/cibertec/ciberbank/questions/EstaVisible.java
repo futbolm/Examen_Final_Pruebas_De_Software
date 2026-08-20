@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.targets.Target;
 
-/** Pregunta genérica: ¿este Target está actualmente visible en pantalla? */
+
 public class EstaVisible implements Question<Boolean> {
 
     private final Target elemento;

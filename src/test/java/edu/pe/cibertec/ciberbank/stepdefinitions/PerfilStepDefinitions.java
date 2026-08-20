@@ -13,16 +13,6 @@ import net.serenitybdd.screenplay.ensure.Ensure;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
-/**
- * Antes, estos steps solo hacían System.out.println("cerrando sesión...") en vez de
- * comprobar algo real. Ahora cada validación usa Ensure sobre un Target concreto.
- *
- * Nota sobre el 2do escenario: como el logout limpia todo el stack de actividades
- * (FLAG_ACTIVITY_CLEAR_TASK), al presionar "atrás" en la pantalla de login la app
- * simplemente sale al home de Android (no se queda "en" ninguna pantalla de la app).
- * Por eso NO validamos "sigue viendo el login" ahí, sino "no volvió al dashboard",
- * que es literalmente lo que pide el enunciado.
- */
 public class PerfilStepDefinitions {
 
     @Cuando("abre la pantalla de perfil")

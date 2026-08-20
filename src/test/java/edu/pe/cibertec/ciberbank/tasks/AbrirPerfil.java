@@ -9,11 +9,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-/**
- * Navega desde el dashboard hacia Perfil. A diferencia de Transferencias y
- * Movimientos, Perfil NO tiene acceso directo en el dashboard: solo se llega
- * abriendo el menú lateral (btn_menu) y ahí pulsando "Perfil" (btn_nav_perfil).
- */
+
 public class AbrirPerfil implements Task {
 
     public static AbrirPerfil desdeElDashboard() {
